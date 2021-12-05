@@ -1,0 +1,30 @@
+#include <iostream>
+
+using namespace std;
+
+int hatvany(int n){
+    int a = 2 ;
+    int  blu=0;
+    while(n>1){
+        int szam = 0;
+        while(n%a==0){
+            n/=a;
+            szam++;
+        }
+        if(szam%2>0){
+            blu+=a;
+           break;
+        }
+        a++;
+    }
+    return blu;
+}
+
+int main()
+{
+    int n;
+    cout << "n=";
+    cin >> n;
+    cout << "hatvanyfugveny= " << hatvany(n);
+    return 0;
+}
