@@ -8,11 +8,15 @@ using namespace std;
 
 void blu(int n, char a,char b, char c)
 {
-    if (n == 0){return ;}
-    blu(n - 1, a, b, c);
-    cout << " " << n << "." << a <<"->" << c << endl;
-    blu(n - 1, b, c, a);
+    if (n == 0)
+    {
+        return;
+    }
+    blu(n - 1, a, c, b);
+    cout << "" << n << "." << a <<" -> " << b << endl;
+    blu(n - 1, c, b, a);
 }
+
 
 int main()
 {
@@ -21,4 +25,3 @@ int main()
     blu(n, 'A', 'C', 'B');
     return 0;
 }
-
