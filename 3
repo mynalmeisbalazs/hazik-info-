@@ -1,0 +1,29 @@
+1. Írjunk programot, mely egy beolvasott string minden egyes magánhangzóját (a, e, i, o, u) kicseréli "mpm"-re, majd minden "p" betű után beszúr egy Z betűt, majd az így kapott stringet kiírja!
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+
+
+   int a,i;
+   string blu;
+   cin>>blu;
+   for(a=0;a<blu.length();a++)
+   {
+       if(blu[a]=='z')
+       {
+           blu.replace(a,1,"pZ");
+       }
+   }
+   for(i=0;i<blu.length();i++)
+   {
+       if(blu[i]=='a' || blu[i]=='e' || blu[i]=='i' || blu[i]=='o' || blu[i]=='u')
+       {
+           blu.replace(i,1,"mpZm");
+       }
+   }
+   cout<<blu;
+} 
