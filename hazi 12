@@ -1,0 +1,36 @@
+1. Hozzunk létre egy egyszeresen láncolt listát, amely n elemet tartalmaz. (az n et a billentyűzetről olvassuk be) Minden elem tartalmaz egy int tipusú mezőt, s egy stringet, amiket billentyűzetről olvasunk be. Aztán keressük meg azt a listaelemet, amelynek a számértéke a legnagyobb, s írjuk ki a az illető elemben levő szöveget.
+#include<iostream>
+using namespace std;
+struct lista {
+   float szam;
+   string nev;
+   lista * kov;
+};
+int main() {
+   lista * mutato = NULL;
+   int n;
+   cout << "n = " ;
+   cin >> n ;
+   int i;
+   for(i=0;i<n;i++) {
+      lista * ujelem = new lista;
+      cout << "blu numero= " ;
+      cin >>ujelem->szam ;
+    cout << "blu name= " ;
+      cin >> ujelem->nev;
+      ujelem->kov  = mutato;
+      mutato = ujelem;
+   }
+    lista * tempmutato = mutato;
+   int maximum=0;
+   string maxiszo;
+   while(tempmutato) {
+     if(tempmutato->szam > maximum ){
+        maximum = tempmutato->szam;
+        maxiszo=tempmutato->nev;
+     }
+      tempmutato = tempmutato->kov ;
+   }
+   cout << maxiszo;
+   return 0;
+}
