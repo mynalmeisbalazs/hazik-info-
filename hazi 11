@@ -1,3 +1,4 @@
+1. Hozzunk létre egy vektort, töltsük fel n elemmel, majd olvassunk be egy pos változót, illetve egy hosszt s töröljünk ki a pos változótól hossz elemet a vektorból
 #include <iostream>
 #include <vector>
 
