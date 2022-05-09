@@ -1,0 +1,29 @@
+Egy n természtes számot tökéletes köbnek nevezünk, ha létezik egy b természetes szám, úgy hogy n=b3. 
+A cuburi alprogram az egyetlen, n paraméterén keresztül egy természetes számot kap (1 <=n <= 103). 
+Az alprogram kiírja a képernyőre, szóközzel elválasztva, csökkenő sorrendben, az első n nem nulla tökéletes köböt. Írja meg a teljes programot.
+
+#include <iostream>
+using namespace std;
+
+void cuburi(int n)
+{
+
+    for (int i = n*n*n; i > 0; i--) {
+
+        for (int j = i; j * j * j > 0; j--) {
+            if (j * j * j == i) {
+                cout << j * j * j << " ";
+                break;
+            }
+        }
+    }
+}
+
+
+int main()
+{
+    long n;
+    cin >>n;
+    cuburi(n);
+    return 0;
+}
