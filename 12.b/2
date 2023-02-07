@@ -1,0 +1,41 @@
+#include <iostream>
+
+using namespace std;
+
+int szamlalo(int blu)
+{
+    int szamjegy = 0;
+    while (blu > 0)
+    {
+        blu /= 10;
+        szamjegy++;
+    }
+    return szamjegy;
+}
+
+int main()
+{
+    int n, k, blu;
+    int szamjegy=0;
+    int kraszna = 0;
+
+    cout<<"n=";
+    cin >> n;
+
+    cout<<"k=";
+    cin >> k;
+
+
+    for (int i = 0; i < n; i++)
+    {
+        cin >> blu;
+        szamjegy = szamlalo(blu);
+        if (szamjegy > k)
+        {
+            kraszna++;
+        }
+    }
+    cout << kraszna << endl;
+
+    return 0;
+}
