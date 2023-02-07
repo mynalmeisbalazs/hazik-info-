@@ -28,3 +28,6 @@ int main() {
     cout << oddSumB << endl;
     return 0;
 }
+Írjunk egy C++ programot, amely beolvas egy n (1≤n≤100) számot, majd egy n hosszúságú egész számokból álló tömböt, maximum 2 számjeggyel a1,a2,a3,…an, majd egy második szintén n hosszúságú tömböt, maximum 2 számjeggyel b1,b2,b3,…bn.
+Mindegyik sorozatban vannak páros és páratlan elemek egyaránt. 
+Írjuk ki azon páratlan elemek összegét a b tömbből, amelyek kisebbek, mint az összes páros szám összege az a ból. Pl n=4 2,3,7,8 44,3,1,8
