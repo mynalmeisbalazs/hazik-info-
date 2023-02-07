@@ -39,3 +39,4 @@ int main()
 
     return 0;
 }
+Írjunk egy C++ programot, amely beolvas egy n (1≤n≤100) számot, majd egy k számot, majd n darab számot, aztán kiszámolja s kiírja hogy hány szám rendelkezik több, mint k számjeggyel.
