@@ -1,0 +1,42 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+    ifstream in("input.txt");
+    ofstream out("output.txt");
+    int n;
+    in >> n;
+    int blu[100][100];
+    for(int i=0; i<n; i++) {
+        for(int j=0; j<n; j++) {
+            in >> blu[i][j];
+        }
+    }
+
+    double fentisum = 0;
+    double szamlalo1 = 0;
+    double lentisum = 0;
+    double szamlalo2 = 0;
+    for(int i=0; i<n; i++) {
+        for(int j=0; j<n; j++) {
+            if(i < j && blu[i][j] > 0) {
+                fentisum += blu[i][j];
+                szamlalo1++;
+            }
+            if(i > j && blu[i][j] > 0) {
+                lentisum += blu[i][j];
+                szamlalo2++;
+            }
+        }
+    }
+
+    double atlag1 = fentisum / szamlalo1;
+    double atlag2 = lentisum / szamlalo2;
+    double hermano = atlag1 - atlag2;
+
+    out << hermano << endl;
+
+    return 0;
+}
