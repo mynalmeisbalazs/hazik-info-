@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+    cout << "n= ";
+    cin >> n;
+    int blu[100][100];
+    for(int i=0; i<n; i++)
+    {
+        for(int j=0; j<n; j++)
+        {
+            cin >> blu[i][j];
+        }
+    }
+    double szumma = 0, szamlalo = 0;
+    for(int i=0; i<n; i++)
+    {
+        for(int j=i+1; j<n; j++)
+        {
+            if(blu[i][j] > 0)
+            {
+                szumma += blu[i][j];
+                szamlalo++;
+            }
+        }
+    }
+    double atlag;
+    atlag = szumma / szamlalo;
+    if(szamlalo > 0)
+    {
+        cout <<atlag<< endl;
+    }
+    else
+    {
+        cout << "Nincs" << endl;
+    }
+
+    return 0;
+}
