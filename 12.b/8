@@ -1,0 +1,40 @@
+#include <iostream>
+#include <fstream>
+#include <vector>
+using namespace std;
+
+bool gyusz(int n) {
+    while (n != 0) {
+        int szamjegy = n % 10;
+        if (szamjegy % 2 == 1) {
+            return false;
+        }
+        n /= 10;
+    }
+    return true;
+}
+
+int main() {
+    ifstream in("atestat.in");
+    ofstream out("atestat.out");
+
+    vector<int> szamok;
+    int x;
+    while (in >> x) {
+        szamok.push_back(x);
+    }
+
+    bool van = false;
+    for (int n : szamok) {
+        if (gyusz(n)) {
+            out << n << endl;
+            van = true;
+        }
+    }
+
+    if (!van) {
+        out << "nem létezik" << endl;
+    }
+
+    return 0;
+}
